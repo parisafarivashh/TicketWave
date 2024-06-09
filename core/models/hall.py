@@ -4,7 +4,7 @@ from .mixins import ModifiedByMixin
 
 
 class Hall(ModifiedByMixin):
-
+    created_by = models.ForeignKey('authorize.User', on_delete=models.CASCADE)
     title = models.CharField(
         max_length=128,
         unique=True,

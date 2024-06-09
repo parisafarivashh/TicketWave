@@ -4,7 +4,7 @@ from .mixins import ModifiedByMixin
 
 
 class Concert(ModifiedByMixin):
-
+    owner = models.ForeignKey('authorize.User', on_delete=models.CASCADE)
     date = models.DateField(blank=False, null=False)
     hall = models.ForeignKey('Hall', on_delete=models.CASCADE)
     base_price = models.DecimalField(

@@ -28,6 +28,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=255)
+    is_admin = models.BooleanField(default=False)
 
     objects = UserManager()
 
